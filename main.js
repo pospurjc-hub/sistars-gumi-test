@@ -1,5 +1,6 @@
 const generateBtn = document.querySelector('.generate-btn');
 const numbersContainer = document.querySelector('.numbers-container');
+const themeToggle = document.getElementById('theme-toggle');
 
 function generateLottoNumbers() {
     const numbers = new Set();
@@ -33,4 +34,13 @@ function getRandomColor() {
 generateBtn.addEventListener('click', () => {
     const lottoNumbers = generateLottoNumbers();
     displayNumbers(lottoNumbers);
+});
+
+// Theme Toggle Logic
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
 });

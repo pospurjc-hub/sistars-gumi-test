@@ -1,18 +1,35 @@
+:root {
+    --bg-color: #f0f0f0;
+    --container-bg: #fff;
+    --text-color: #333;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --container-bg: #2d2d2d;
+    --text-color: #f0f0f0;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
 body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .lotto-container {
     text-align: center;
     padding: 40px;
     border-radius: 15px;
-    background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--container-bg);
+    box-shadow: 0 10px 20px var(--shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 h1 {
@@ -51,4 +68,17 @@ h1 {
 
 .generate-btn:hover {
     background-color: #45a049;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--shadow);
 }
