@@ -25,7 +25,7 @@ body {
     gap: 40px;
 }
 
-.lotto-container, .contact-container {
+.lotto-container, .contact-container, .comments-container {
     text-align: center;
     padding: 40px;
     border-radius: 15px;
@@ -36,7 +36,7 @@ body {
     max-width: 500px;
 }
 
-.contact-container h2 {
+.contact-container h2, .comments-container h2 {
     margin-bottom: 20px;
 }
 
