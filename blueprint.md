@@ -1,9 +1,9 @@
 
-# **Project Blueprint: Lotto Number Generator**
+# **Project Blueprint: JC 행운번호 추첨기**
 
 ## **Overview**
 
-This document outlines the design and development plan for a simple, modern, and visually appealing Lotto Number Generator web application. The application will be built using framework-less web technologies (HTML, CSS, JavaScript) and will adhere to modern web standards.
+This document outlines the design and development plan for a simple, modern, and visually appealing JC 행운번호 추첨기 web application. The application will be built using framework-less web technologies (HTML, CSS, JavaScript) and will adhere to modern web standards.
 
 ## **Core Features**
 

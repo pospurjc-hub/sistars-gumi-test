@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>동물상 테스트 - 강아지인가 고양이인가?</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
-    <div class="lotto-container">
-        <h1>Lotto Number Generator</h1>
-        <div class="numbers-container">
+    
+    <div class="test-container">
+        <h1>동물상 테스트</h1>
+        <p class="subtitle">나의 얼굴은 강아지상일까, 고양이상일까?</p>
+        
+        <div class="upload-section">
+            <div id="image-container" class="preview-container">
+                <img id="face-image" src="#" alt="your image" style="display:none; max-width: 100%; border-radius: 10px;" />
+                <div id="webcam-container"></div>
+            </div>
+            
+            <div class="button-group">
+                <input type="file" id="file-input" accept="image/*" style="display:none;">
+                <button type="button" class="action-btn" onclick="document.getElementById('file-input').click()">사진 업로드</button>
+                <button type="button" class="action-btn" id="webcam-btn">웹캠 시작</button>
+            </div>
         </div>
-        <button class="generate-btn">Generate Numbers</button>
+
+        <div id="loading" style="display:none;">분석 중...</div>
+        
+        <div class="result-section">
+            <h2 id="result-message"></h2>
+            <div id="label-container" class="result-container"></div>
+        </div>
     </div>
 
     <div class="contact-container">
@@ -35,27 +56,19 @@
     </div>
 
     <div class="comments-container">
-        <h2>댓글</h2>
         <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://sistars-gumi-test-2.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
+    
+    <script>
+        (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sistars-gumi-test-2.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
     <script src="main.js"></script>
 </body>
 </html>
